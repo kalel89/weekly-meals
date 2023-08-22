@@ -34,12 +34,12 @@ jobs:
         run: npm i   
       # build
       - name: Build app bundle
-        run: npm run build
+        run: npm run build:prod
       # deployd in github pages
       - name : Deploy in Pages
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with: 
-          build_dir: dist/
+          build_dir: dist/mi-lista-app
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKENS}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
