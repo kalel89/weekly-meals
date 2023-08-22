@@ -1,0 +1,118 @@
+/* Puedes personalizar estos estilos según tus preferencias */
+.mat-expansion-panel-header-title {
+    color: #b4d2ee !important; 
+    stroke: #b4d2ee;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.mat-expansion-panel {
+    background-color: #526273;
+    margin-bottom: 10px;
+    
+  }
+  
+  .mat-expansion-panel-header {
+    background-color: #526273;
+    border: 1px solid rgb(232, 199, 199);
+  }
+  
+  .mat-panel-title,
+  .mat-panel-description {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mat-icon-button {
+    margin-right: 8px;
+  }
+  
+  /* Otros estilos de tu preferencia */
+  
+  .button-special {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  /* divs*/
+  /* component.css */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente fila cuando no hay suficiente espacio */
+}
+
+.left, .right {
+  padding: 20px;
+}
+
+.left {
+  flex: 1; /* Toma el espacio restante */
+}
+
+.right {
+  flex: 1; /* Toma el espacio restante */
+  margin-top: 20px; /* Separación entre divs en dispositivos pequeños */
+}
+
+.div-flotante {
+  position: fixed;
+  top: 50px; /* Altura desde la parte superior */
+  right: 20px; /* Distancia desde la derecha */
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Cambia a disposición vertical */
+  }
+
+  .right {
+    margin-top: 0; /* Elimina la separación en dispositivos pequeños */
+  }
+}
+
+
+/* Estilos para el formulario SOLO FORMULARO*/
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #9ba213;
+  border-radius: 5px;
+}
+
+/* Estilos para los campos de entrada */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones */
+.button-accept {
+  background-color: #5b83af;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button {
+  background-color: #5b83af;
+  color: white;
+  border: none;
+  /*padding: 10px 20px;*/ 
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para botones cuando están desactivados */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

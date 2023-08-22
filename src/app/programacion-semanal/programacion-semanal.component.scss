@@ -1,0 +1,22 @@
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .menu-item button {
+    margin-left: 16px; /* Distancia de separación constante */
+  }
+  
+  .item-lista-externo {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item-lista {
+    padding: 10px;
+    border: none
+  }
+  

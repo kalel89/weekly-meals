@@ -1,0 +1,110 @@
+<body>
+  <button class="button-accept" (click)="abrirExplorador()">Seleccionar Archivo</button>
+  <input type="file" style="display: none" #fileInput (change)="cargarArchivo($event)">
+  <button class="button-accept" (click)="guardarEnArchivo()">Guardar Cambios</button>
+
+  <div class="container">
+    <div class="left">
+      <h1>Menús completos diarios  
+        <button mat-icon-button (click)="seleccionarDia()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <input type="text" [(ngModel)]="buscarTexto" placeholder="Buscar" (input)="filtrarMenus($event)">
+      </h1>
+
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="dia === diaSeleccionada" *ngFor="let dia of listaFiltrada">
+          
+          <mat-expansion-panel-header (click)="seleccionarDia(dia)" >
+            <mat-panel-title>
+              {{ dia.nombre_dia_menu }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>    
+          <mat-panel-description>
+            <button mat-icon-button (click)="seleccionarComida()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-panel-description>
+              <mat-expansion-panel [expanded]="comida === comidaSeleccionada" *ngFor="let comida of dia.comidas">
+                <mat-expansion-panel-header (click)="seleccionarComida(comida)" >
+                  <mat-panel-title>
+                    {{ comida.nombre_comida }}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-panel-description>
+                  <button mat-icon-button (click)="seleccionarIngrediente()">
+                    <mat-icon>add</mat-icon>
+                  </button>
+                  <button mat-icon-button (click)="eliminarComida(comida)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </mat-panel-description>  
+                    <mat-expansion-panel [expanded]="ingrediente === nuevoIngrediente" *ngFor="let ingrediente of comida.ingredientes">
+                      <mat-expansion-panel-header  (click)="seleccionarIngrediente(ingrediente)">
+                        <mat-panel-title>
+                          {{ ingrediente.ingrediente }} - {{ ingrediente.cantidad }} {{ ingrediente.unidad }}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          <button mat-icon-button (click)="seleccionarIngrediente()">
+                            <mat-icon>edit</mat-icon>
+                          </button>
+                          <button mat-icon-button (click)="eliminarIngrediente(ingrediente)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                    </mat-expansion-panel>
+              </mat-expansion-panel>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="right div-flotante">
+      <div *ngIf="formActivo==='I'" class="form-container">
+        <h2>Agregar Ingrediente</h2>
+        <form (ngSubmit)="agregarIngrediente(comidaSeleccionada)">
+          <mat-form-field>
+            <input matInput type="text" [(ngModel)]="nuevoIngrediente.ingrediente" name="ingrediente" placeholder="Nombre del ingrediente" required>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput type="number" [(ngModel)]="nuevoIngrediente.cantidad" name="cantidad" placeholder="Cantidad" required>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput type="text" [(ngModel)]="nuevoIngrediente.unidad" name="unidad" placeholder="Unidad" required>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput type="text" [(ngModel)]="nuevoIngrediente.tipo_preparacion" name="tipo_preparacion" placeholder="Tipo de preparación" required>
+          </mat-form-field>
+      
+          <button class="button-accept" *ngIf="isNewRegistry" type="submit">Agregar Ingrediente</button>
+        </form>
+      </div>
+    
+    <div *ngIf="formActivo==='C'" class="form-container">
+      <h2>Agregar Comida</h2>
+      <form (ngSubmit)="registrarNuevaComida()">   
+      
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="comidaSeleccionada.nombre_comida" name="nombre_comida" placeholder="Nombre de la comida" required>
+        </mat-form-field>
+
+        <button class="button-accept" *ngIf="isNewRegistry" type="submit">Registrar Comida</button>
+      </form>
+    </div>
+    
+    <div *ngIf="formActivo==='D'" class="form-container">
+      <h2>Agregar Menu Diario</h2>
+      <form (ngSubmit)="registrarNuevoDia()">
+      
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="diaSeleccionada.nombre_dia_menu" name="nombre_dia_menu" placeholder="Nombre del menu del día" required>
+        </mat-form-field>
+
+        <button class="button-accept" *ngIf="isNewRegistry" type="submit">Registrar dia de menu</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,15 @@
+/* Estilos para el toolbar */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+}
+
+/* Estilos para el título */
+.title {
+  font-size: 1.2rem;
+}
+body {    
+    color: #2d564e;
+    background-color: #54b57b;
+  }
