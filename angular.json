@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mi-lista-app": {
+    "weekly-meals": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mi-lista-app",
+            "outputPath": "dist/weekly-meals",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mi-lista-app:build:production"
+              "browserTarget": "weekly-meals:build:production"
             },
             "development": {
-              "browserTarget": "mi-lista-app:build:development"
+              "browserTarget": "weekly-meals:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mi-lista-app:build"
+            "browserTarget": "weekly-meals:build"
           }
         },
         "test": {
@@ -112,5 +112,5 @@
       }
     }
   },
-  "defaultProject": "mi-lista-app"
+  "defaultProject": "weekly-meals"
 }
