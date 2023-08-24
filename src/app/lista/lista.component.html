@@ -59,6 +59,7 @@
       </mat-accordion>
     </div>
     <div class="right div-flotante">
+      <button *ngIf="formActivo!=='X'" class="button-close" (click)="cerrarFormulario()">Cerrar</button>
       <div *ngIf="formActivo==='I'" class="form-container">
         <h2>Agregar Ingrediente</h2>
         <form (ngSubmit)="agregarIngrediente(comidaSeleccionada)">

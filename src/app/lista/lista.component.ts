@@ -13,7 +13,7 @@ export class ListaComponent implements OnInit, AfterViewInit{
     
   }
   buscarTexto: string = '';
-  formActivo: string = '';
+  formActivo: string = 'X';
   isNewRegistry: boolean = false;
 
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
@@ -44,6 +44,9 @@ export class ListaComponent implements OnInit, AfterViewInit{
     this.setIngredienteSeleccionado();
     this.listaMenus = this.service.listaMenus;
     this.listaFiltrada = this.listaMenus;
+    this.buscarTexto = '';
+    this.formActivo = 'X';
+    this.isNewRegistry = false;
   }
 
   ngAfterViewInit() {
@@ -188,5 +191,12 @@ export class ListaComponent implements OnInit, AfterViewInit{
 
     // Liberar el objeto URL
     URL.revokeObjectURL(url);
+  }
+
+  cerrarFormulario() {    
+    this.formActivo = 'X';
+    this.setDiaSeleccionado();
+    this.setComodaSeleccionada();
+    this.setIngredienteSeleccionado();
   }
 }

@@ -116,3 +116,10 @@ button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
