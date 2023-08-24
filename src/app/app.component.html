@@ -1,7 +1,55 @@
-<mat-toolbar class="toolbar">
+<!-- <mat-toolbar class="toolbar">
   <span class="title">Menus Semanales</span>
   <button mat-button routerLink="/creacion">Creación de menús</button>
   <button mat-button routerLink="/programacion-semanal">Programación semanal</button>
   <button mat-button routerLink="/componente3">Componente 3</button>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<mat-sidenav-container>
+  <mat-sidenav mode="over" [opened]="sidebarOpen">
+    <span class="title">Menus Semanales</span>
+    <!-- Contenido del menú aquí -->
+    <ul>
+      <li><a (click)="toggleSidebar()" routerLink="/creacion">Creacion de menus</a></li>
+      <li><a (click)="toggleSidebar()" routerLink="/programacion-semanal">Programacion semanal</a></li>
+      <li><a (click)="toggleSidebar()" routerLink="/historial">Mis programaciones</a></li>
+    </ul>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>    
+    <span class="title">Menus Semanales</span>
+    <button class="button-accept" (click)="abrirExplorador()">Seleccionar Archivo</button>
+    <input type="file" style="display: none" #fileInput (change)="cargarArchivo($event)">
+    <button class="button-accept" (click)="guardarEnArchivo()">Guardar Cambios</button>
+
+    <!-- Contenido principal de la página aquí -->
+    <router-outlet></router-outlet>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

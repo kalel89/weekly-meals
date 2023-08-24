@@ -9,7 +9,7 @@ import { ProgramacionSemanalComponent } from './programacion-semanal/programacio
 const routes: Routes = [
   { path: 'creacion', component: ListaComponent },
   { path: 'programacion-semanal', component: ProgramacionSemanalComponent },
-  //{ path: 'componente3', component: Componente3Component },
+  { path: 'historial', component: ListaComponent },
   { path: '', redirectTo: '/creacion', pathMatch: 'full' } // Ruta por defecto
 ];
 

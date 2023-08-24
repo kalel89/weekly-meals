@@ -18,14 +18,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { MatTreeModule } from '@angular/material/tree';
-import { ProgramacionSemanalComponent } from './programacion-semanal/programacion-semanal.component'; // Importa RouterModule y la configuración de rutas
+import { ProgramacionSemanalComponent } from './programacion-semanal/programacion-semanal.component';
+import { AppBooterComponent } from './app-booter/app-booter.component'; // Importa RouterModule y la configuración de rutas
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaComponent,
-    ProgramacionSemanalComponent
+    ProgramacionSemanalComponent,
+    AppBooterComponent
   ],
   imports: [
     FormsModule,
