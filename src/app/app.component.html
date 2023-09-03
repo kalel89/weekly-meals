@@ -6,14 +6,18 @@
 </mat-toolbar>
 <router-outlet></router-outlet> -->
 
-<mat-sidenav-container>
+<mat-sidenav-container  class="full-height">
   <mat-sidenav mode="over" [opened]="sidebarOpen" (openedChange)="onSidenavStateChange($event)">
-    <span class="title">Menus Semanales</span>
     <!-- Contenido del menú aquí -->
     <ul>
+      <li><h3>Modulos:</h3></li>
       <li><a (click)="toggleSidebar()" routerLink="/creacion">Creacion de menus</a></li>
+      <mat-divider></mat-divider>
       <li><a (click)="toggleSidebar()" routerLink="/programacion-semanal">Programacion semanal</a></li>
       <li><a (click)="toggleSidebar()" routerLink="/historial">Mis programaciones</a></li>
+      <li><h3>Guardar Cambios:</h3></li>
+      <li><a (click)="abrirExplorador()">Cargar archivo</a></li>
+      <li><a (click)="guardarEnArchivo()">Guardar archivo</a></li>
     </ul>
   </mat-sidenav>
 
@@ -21,10 +25,9 @@
     <button mat-icon-button (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>    
-    <span class="title">Menus Semanales</span>
-    <button class="button-accept" (click)="abrirExplorador()">Seleccionar Archivo</button>
+    <span class="title">Menus Semanales</span>    
     <input type="file" style="display: none" #fileInput (change)="cargarArchivo($event)">
-    <button class="button-accept" (click)="guardarEnArchivo()">Guardar Cambios</button>
+    
 
     <!-- Contenido principal de la página aquí -->
     <router-outlet></router-outlet>

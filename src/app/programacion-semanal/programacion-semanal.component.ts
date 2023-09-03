@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DiaMenu, Ingrediente, IngredienteEnListCompra, ListaCompra, ProgramacionSemanal } from '../modelo/modelos';
 import { DataService } from '../services/data.service';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
-import { zip } from 'rxjs/internal/observable/zip';
+import { MatDialog } from '@angular/material/dialog';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+
 
   /***-----------------------------*/
 

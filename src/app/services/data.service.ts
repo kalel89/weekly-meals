@@ -6,6 +6,7 @@ import { DiaMenu } from '../modelo/modelos';
 })
 export class DataService {
   listaMenus: DiaMenu[] = [];
+  programacionSemanalEditable: DiaMenu[] = [];
   tituloPopup: string = '';
   contenidoPopup: string = '';
 

@@ -39,3 +39,21 @@ li a {
 li a:hover {
   background-color: #ddd;
 }
+
+/* styles.css o tu archivo de estilos personalizado */
+
+.full-height {
+  height: 100vh; /* Establece la altura al 100% del viewport (ventana del navegador) */
+}
+
+/* Asegúrate de aplicar también la altura al 100% a los elementos padres si es necesario */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegúrate de que el contenido dentro de mat-sidenav-container también tenga altura al 100% */
+.full-height > * {
+  height: 100%;
+}
