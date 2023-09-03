@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ListaComponent } from './lista/lista.component';
+import { CreacionMenusComponent } from './creacion-menu/creacion-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,15 +19,17 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { MatTreeModule } from '@angular/material/tree';
 import { ProgramacionSemanalComponent } from './programacion-semanal/programacion-semanal.component';
-import { AppBooterComponent } from './app-booter/app-booter.component'; // Importa RouterModule y la configuración de rutas
+import { AppBooterComponent } from './app-booter/app-booter.component';
+import { GestionListaCompraComponent } from './gestion-lista-compra/gestion-lista-compra.component'; // Importa RouterModule y la configuración de rutas
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaComponent,
+    CreacionMenusComponent,
     ProgramacionSemanalComponent,
-    AppBooterComponent
+    AppBooterComponent,
+    GestionListaCompraComponent
   ],
   imports: [
     FormsModule,

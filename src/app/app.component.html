@@ -7,7 +7,7 @@
 <router-outlet></router-outlet> -->
 
 <mat-sidenav-container>
-  <mat-sidenav mode="over" [opened]="sidebarOpen">
+  <mat-sidenav mode="over" [opened]="sidebarOpen" (openedChange)="onSidenavStateChange($event)">
     <span class="title">Menus Semanales</span>
     <!-- Contenido del menú aquí -->
     <ul>

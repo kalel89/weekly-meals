@@ -1,4 +1,5 @@
 import { Component, HostListener, ViewChild, ElementRef, } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../app/services/data.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class AppComponent {
   title = 'mi-lista-app';
   sidebarOpen = false;
 
-  constructor(private  service: DataService) {  }
+  constructor(private  service: DataService, private router: Router) {  }
 
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
@@ -21,7 +22,7 @@ export class AppComponent {
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
 
   toggleSidebar(): void {
-    this.sidebarOpen = !this.sidebarOpen;
+    this.sidebarOpen = !this.sidebarOpen;    
   }
 
   abrirExplorador() {
@@ -33,6 +34,10 @@ export class AppComponent {
       this.leerContenidoArchivo(archivoSeleccionado);
     }
   }
+  onSidenavStateChange(isOpen: boolean) {
+
+    this.sidebarOpen = isOpen ? this.sidebarOpen : isOpen;
+  }
 
   leerContenidoArchivo(archivo: File) {
     const lector = new FileReader();
@@ -42,6 +47,7 @@ export class AppComponent {
         const contenidoJSON = JSON.parse(contenido);
         this.service.setListaMenus(contenidoJSON);
         console.log(contenidoJSON);
+        this.router.navigate(['creacion']).then(x=>{});
       } catch (error) {
         console.error('El archivo no es válido JSON.', error);
       }

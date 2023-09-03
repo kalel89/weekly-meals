@@ -3,11 +3,11 @@ import { Comida, DiaMenu, Ingrediente } from '../modelo/modelos';
 import { DataService } from '../services/data.service';
 
 @Component({
-  selector: 'app-lista',
-  templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.css']
+  selector: 'app-creacion-menu',
+  templateUrl: './creacion-menu.component.html',
+  styleUrls: ['./creacion-menu.component.css']
 })
-export class ListaComponent implements OnInit, AfterViewInit{
+export class CreacionMenusComponent implements OnInit, AfterViewInit{
   
   constructor(private  service: DataService) {  }
   buscarTexto: string = '';
